@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotation App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <!-- MCW Banner Image -->
+    <div class="mcw-banner-container">
+        <img src="assets/mcw-banner.png" alt="MulticoreWare Banner" class="mcw-banner-img" />
+    </div>
+    <script src="script.js"></script>
+    <div class="main-card">
+        <header>
+            <h1>Image Annotation Tool</h1>
+            <p class="subtitle">Upload an image and annotate with points or bounding boxes.</p>
+        </header>
+        <section class="upload-section">
+            <label for="imageUpload" class="upload-label">Choose Image</label>
+            <input type="file" id="imageUpload" accept="image/*">
+            <span id="file-chosen" style="display:none"></span>
+            <button id="removeImageBtn" style="margin-left: 12px; background: #ff4d4f; color: #fff; border: none; border-radius: 6px; padding: 8px 18px; cursor: pointer;">Remove Image</button>
+        </section>
+        <section class="canvas-section">
+            <div id="canvasWrapper">
+                <canvas id="annotationCanvas" width="800" height="600"></canvas>
+            </div>
+        </section>
+        <section class="controls-section">
+            <div class="controls">
+                <button id="point-mode-btn" class="mode-btn" disabled>Point Mode</button>
+                <button id="box-mode-btn" class="mode-btn" disabled>Bounding Box Mode</button>
+                <button id="clearBtn">Clear Annotations</button>
+            </div>
+        </section>
+        <section class="annotation-section">
+            <h2>Annotations</h2>
+            <div id="annotationData" class="annotation-data-box"></div>
+        </section>
+        <div class="save-annotations-container">
+            <select id="save-format" style="margin-right:10px; padding:6px; border-radius:4px;">
+                <option value="json">JSON</option>
+                <option value="csv">CSV</option>
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+            </select>
+            <button id="save-button">Save Annotations</button>
+        </div>
+    </div>
+</body>
+</html>

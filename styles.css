@@ -1,0 +1,367 @@
+canvas#annotationCanvas {
+    border: 2px solid #1976d2;
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.custom-file-label:hover, .custom-file-label:focus {
+    background: #1976d2;
+    color: #fff;
+    outline: none;
+}
+#removeImageBtn {
+    padding: 8px 18px;
+    background: #ff4d4f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-left: 8px;
+}
+#removeImageBtn:hover, #removeImageBtn:focus {
+    background: #d9363e;
+    outline: none;
+}
+.upload-section {
+    display: block;
+    margin-bottom: 12px;
+}
+#file-chosen {
+    margin-left: 8px;
+    font-size: 1rem;
+    color: #333;
+    font-family: inherit;
+}
+/* Upload control styles (cleaned and de-duplicated) */
+.custom-file-label {
+    border: 2px solid #1976d2;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 500;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.07);
+    display: inline-block;
+    padding: 8px 12px;
+}
+.custom-file-label:hover, .custom-file-label:focus {
+    background: #1976d2;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+    outline: none;
+}
+.upload-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+#removeImageBtn {
+    padding: 10px 22px;
+    background: #ff4d4f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: 500;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(255, 77, 79, 0.07);
+}
+#removeImageBtn:hover, #removeImageBtn:focus {
+    background: #d9363e;
+    box-shadow: 0 4px 16px rgba(255, 77, 79, 0.18);
+    outline: none;
+}
+#save-button:hover, #save-button:focus {
+    background: #1976d2;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+    outline: none;
+}
+#clearBtn:hover, #clearBtn:focus {
+    background: #ff4d4f;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(255, 77, 79, 0.15);
+    outline: none;
+}
+/* MCW Banner Image Styling */
+.mcw-banner-container {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    margin: 0;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    display: block;
+    z-index: 2000;
+}
+.mcw-banner-img {
+    width: 320px;
+    max-width: 40vw;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    display: block;
+}
+/* Fixed MCW logo in top left */
+.mcw-logo-fixed {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 1000;
+}
+.mcw-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.mcw-logo-img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    display: block;
+}
+.mcw-logo-text {
+    font-family: 'Varela Round', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.6rem;
+    color: #111;
+    letter-spacing: -0.09em;
+    text-decoration: none;
+    text-transform: lowercase;
+    display: inline-block;
+    line-height: 1.05;
+    user-select: none;
+    transition: opacity 0.2s;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.mcw-logo-text:hover {
+    opacity: 0.8;
+}
+/* MulticoreWare logo and header flex */
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+}
+.mcw-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.header-title-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.annotation-data-box button {
+    margin-left: 8px;
+    background: #ff4d4f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.annotation-data-box button:hover {
+    background: #d9363e;
+}
+/* Annotation data box: fixed height, scrollable, does not move image */
+.annotation-data-box {
+    width: 800px;
+        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    padding: 8px;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.annotation-container {
+    position: relative;
+    border: 2px dashed #ccc;
+        width: 100%;
+        max-width: 800px;
+        max-height: 120px;
+        overflow-y: auto;
+        background: #fafafa;
+        border: 1px solid #eee;
+        font-size: 15px;
+        margin-top: 8px;
+        padding: 8px 12px;
+        white-space: pre-wrap;
+        box-sizing: border-box;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.annotation-box {
+    position: absolute;
+    border: 2px solid blue;
+    background-color: rgba(0, 0, 255, 0.2);
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.annotation-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+.mode-controls {
+    margin: 10px 0;
+}
+
+.mode-controls button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.mode-controls button.active-mode, .controls button.active-mode {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.controls button:hover {
+    background: #f0f0f0;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.main-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+    padding: 32px 32px 24px 32px;
+    max-width: 900px;
+    width: 100%;
+    margin: 80px 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+/* Modern card style */
+/* Old look: simple card and controls */
+/* Old look: simple card and controls */
+.main-card {
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    padding: 32px 36px 24px 36px;
+    display: block;
+}
+.controls-section .controls {
+    display: block;
+    margin-bottom: 8px;
+}
+.annotation-section {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 10px;
+    box-shadow: none;
+}
+.annotation-section h2 {
+    color: #222;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.annotation-data-box {
+    max-height: 180px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    font-size: 1rem;
+}
+.save-annotations-container {
+    display: block;
+    margin-top: 10px;
+}
+#save-format {
+    padding: 4px 10px;
+    border-radius: 0;
+    border: 1px solid #1976d2;
+    font-size: 1rem;
+    color: #222;
+    background: #fff;
+    font-family: inherit;
+    font-weight: 400;
+    transition: border 0.2s;
+}
+#save-format:focus {
+    border: 1px solid #1256a0;
+    outline: none;
+}
